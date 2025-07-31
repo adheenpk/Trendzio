@@ -1,0 +1,53 @@
+{% extends 'blank_layout.html' %}
+
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <img src="{% static 'images/banner-3.png' %}" width="100%">
+        </div>
+        <div class="col-2 position-relative">
+
+            {% if messages %}
+            <div class="message-container">
+                {% for message in messages %}
+                <div class="popup-message {{ message.tags }}">
+                    {{ message }}
+                    <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="form-container">
+                <div class="form-btn">
+                    <span onclick="login()">Login</span>
+                    <span onclick="register()">Register</span>
+                    <hr id="Indicator">
+                </div>
+
+                <!-- LOGIN FORM -->
+                <form id="LoginForm" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit" name="login" class="btn">Login</button>
+                    <a href="#">Forget Password</a>
+                </form>
+
+                <!-- REGISTER FORM -->
+                <form id="RegForm" method="post"  enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" name="username" maxlength="10" minlength="6" placeholder="Username" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" minlength="6" required>
+                    <input type="text" name="address" minlength="6" placeholder="Address" required>
+                    <input type="text" name="phone" minlength="10" placeholder="Phone" required>
+                    <button type="submit" name="register" class="btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
