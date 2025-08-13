@@ -1,38 +1,25 @@
+# Core Django
 Django==5.1.3
 asgiref==3.8.1
 pytz==2024.1
 sqlparse==0.5.2
-mysqlclient==2.2.7      # only if using MySQL
-gunicorn==21.2.0         # for deployment
-django-extensions==3.2.3 # optional, for dev tools
-whitenoise==6.9.0        # for serving static files
-requests==2.31.0         # if your app makes HTTP calls
-argcomplete==3.1.4       # optional, for CLI completion
-attrs==23.2.0            # required by Django or other packages
-Babel==2.10.3            # if you use translations
-blinker==1.7.0           # optional, signals
-boltons==21.0.0          # optional, utility functions
-bracex==2.5.post1        # optional, regex helpers
-certifi==2023.11.17
-chardet==5.2.0
-click==8.1.6
-click-option-group==0.5.6
-cryptography==41.0.7
-fsspec==2024.10.0         # if you deal with file systems
-GitPython==3.1.43         # optional, if using Git integration
-Jinja2==3.1.4
-jsonschema==4.10.3
-Markdown-it-py==3.0.0
-MarkupSafe==2.1.5
-numpy==2.1.3             # only if used in your project
-opencv-python==4.11.0.86  # only if used in your project
-pandas==2.2.3            # only if used in your project
+
+# Database
+mysqlclient==2.2.7   # only if using MySQL
+
+# Deployment
+gunicorn==21.2.0      # WSGI server for Render
+whitenoise==6.9.0     # serve static files
+
+# Dev tools (optional, safe for deploy)
+django-extensions==3.2.3
+
+# Networking / HTTP
+requests==2.31.0
+
+# Image & data processing
 Pillow==10.2.0
-PyYAML==6.0.1
-rich==13.7.1
-setuptools==68.1.2
-typing_extensions==4.12.2
-urllib3==2.0.7
-wheel==0.42.0
-wrapt==1.16.0
-zipp==3.20.2
+numpy==2.1.3
+pandas==2.2.3
+opencv-python==4.11.0.86
+
