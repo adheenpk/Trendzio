@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get(
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 # Allow Railway host or fallback
-ALLOWED_HOSTS = ["trendzio.up.railway.app"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "trendzio.up.railway.app"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
