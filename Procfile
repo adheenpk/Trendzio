@@ -1,1 +1,1 @@
-web: gunicorn trendzio.wsgi
+web: gunicorn trendzio.wsgi:application --bind 0.0.0.0:$PORT
